@@ -22,7 +22,7 @@ describe("Scriptable dashboard", function () {
     var dashboard = asyncScriptedDashboard({
       no_help: true,
       m1: 'example.metric.2'});
-    expect(dashboard.rows[0].title).toBe('Title');
+    expect(dashboard.rows[0].title).toBe('Custom');
     expect(dashboard.rows[0].panels[0].type).toBe('graphite');
     expect(dashboard.rows[0].panels[0].targets[0].target).toBe('example.metric.2');
   });
@@ -33,7 +33,7 @@ describe("Scriptable dashboard", function () {
       m1: 'example.metric.1',
       m2: 'example.metric.2'});
     expect(dashboard.rows.length).toBe(1);
-    expect(dashboard.rows[0].title).toBe('Title');
+    expect(dashboard.rows[0].title).toBe('Custom');
     expect(dashboard.rows[0].panels[0].targets[0].target).toBe('example.metric.1');
     expect(dashboard.rows[0].panels[0].targets[1].target).toBe('example.metric.2');
   });

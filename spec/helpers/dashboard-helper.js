@@ -31,7 +31,7 @@ global.asyncScriptedDashboard = function (args, callback) {
   if (typeof callback === 'undefined') {
     callback = jasmine.createSpy();
   }
-  var dashboardFn = scriptedDashboard('foo.js', args);
+  var dashboardFn = scriptedDashboard('custom.js', args);
   dashboardFn(callback);
   return callback.calls.argsFor(0)[0];
 };

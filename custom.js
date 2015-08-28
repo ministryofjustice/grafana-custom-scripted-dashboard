@@ -101,7 +101,7 @@ function mdEscape(text) {
 }
 
 function mdLinksToAllMetrics() {
-  var dashboard = 'dashboard/script/foo.js';
+  var dashboard = 'dashboard/script/custom.js';
   var i = 0;
   return allTargets().map(function (target) {
     i = i + 1;
@@ -147,6 +147,8 @@ function custom_metric_row(title, targets) {
       lines: true,
       fill: 0,
       linewidth: 2,
+      points: true,
+      pointradius: 1,
       stack: false,
       legend: {show: true},
       percentage: false,
@@ -180,7 +182,7 @@ return function (callback) {
   }
 
   if (targets.length) {
-    dashboard.rows.push(custom_metric_row('Title', targets));
+    dashboard.rows.push(custom_metric_row('Custom', targets));
   } else {
     dashboard.rows.push(metrics_list_row());
   }
